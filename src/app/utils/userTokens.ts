@@ -8,7 +8,7 @@ import httpsStatus from "http-status-codes";
 
 export const createUserTokens = (user: Partial<IUser>) => {
   const jwtPayload = {
-    userId: user._id,
+     userId: user._id,
     email: user.email,
     role: user.role,
   };
