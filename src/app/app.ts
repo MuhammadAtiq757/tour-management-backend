@@ -1,25 +1,39 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-import express from "express";
-import type { Request, Response } from "express";
+import cookieParser from "cookie-parser";
 import cors from "cors";
-import { router } from "./routes";
+import express, { Request, Response } from "express";
+import expressSession from "express-session";
+import passport from "passport";
+import "./../app/config/passport";
 import { globalErrorHandler } from "./middlewares/globalErrorHandler";
+import { router } from "./routes";
 import notFound from "./middlewares/notFound";
+import { envVars } from "./config/env";
 
-const app = express();
+const app = express()
 
-app.use(express.json());
-app.use(cors());
-app.use("/api/v1", router);
+
+app.use(expressSession({
+    secret: envVars.EXPRESS_SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false
+}))
+app.use(passport.initialize())
+app.use(passport.session())
+app.use(cookieParser())
+app.use(express.json())
+app.use(cors())
+
+app.use("/api/v1", router)
 
 app.get("/", (req: Request, res: Response) => {
-  res.status(200).json({
-    message: "Welcome to Management system Backend",
-  });
-});
+    res.status(200).json({
+        message: "Welcome to Tour Management System Backend"
+    })
+})
 
-// global error handler
-app.use(globalErrorHandler);
-app.use(notFound);
 
-export default app;
+app.use(globalErrorHandler)
+
+app.use(notFound)
+
+export default app
