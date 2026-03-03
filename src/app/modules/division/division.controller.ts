@@ -1,5 +1,4 @@
 import { Request, Response } from "express";
-
 import { catchAsync } from "../../utils/catchAsync";
 import { sendResponse } from "../../utils/sendResponse";
 import { DivisionService } from "./division.service";
@@ -30,7 +29,7 @@ const getSingleDivision = catchAsync(async (req: Request, res: Response) => {
     sendResponse(res, {
         statusCode: 200,
         success: true,
-        message: "Division retrieved",
+        message: "Divisions retrieved",
         data: result.data,
     });
 });
