@@ -11,21 +11,33 @@
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@types/cookie-parser": "^1.4.10",
     "@types/cors": "^2.8.19",
     "@types/dotenv": "^6.1.1",
     "@types/express": "^5.0.6",
+    "@types/express-session": "^1.18.2",
     "@types/jsonwebtoken": "^9.0.10",
+    "@types/passport": "^1.0.17",
+    "@types/passport-google-oauth20": "^2.0.17",
+    "@types/passport-local": "^1.0.38",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.9.3"
   },
   "dependencies": {
+    "axios": "^1.14.0",
+    "bcryptjs": "^3.0.3",
+    "cookie-parser": "^1.4.7",
     "cors": "^2.8.6",
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
+    "express-session": "^1.19.0",
     "http-status-code": "^2.1.0",
     "http-status-codes": "^2.3.0",
     "jsonwebtoken": "^9.0.3",
     "mongoose": "^9.1.5",
+    "passport": "^0.7.0",
+    "passport-google-oauth20": "^2.0.0",
+    "passport-local": "^1.0.0",
     "tsc": "^2.0.4",
     "zod": "^4.3.6"
   }
