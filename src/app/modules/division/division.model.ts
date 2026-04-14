@@ -12,6 +12,7 @@ const divisionSchema = new Schema<IDivision>({
 })
 
 
+
 divisionSchema.pre("save", async function () {
     if (this.isModified("name")) {
         const baseSlug = this.name.toLowerCase().split(" ").join("-")
