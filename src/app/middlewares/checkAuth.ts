@@ -7,13 +7,13 @@ import { verifyToken } from "../utils/jwt";
 export const checkAuth = (...authRoles: string[]) => async (req: Request, res: Response, next: NextFunction) => {
 
     try {
-        const accessToken = req.headers.authorization;
+        const authHeader = req.headers.authorization;
 
-        if (!accessToken) {
+        if (!authHeader) {
             throw new AppError(403, "No Token Recieved")
         }
 
-
+        const accessToken = authHeader.startsWith("Bearer ") ? authHeader.slice(7) : authHeader;
         const verifiedToken = verifyToken(accessToken, envVars.JWT_ACCESS_SECRET) as JwtPayload
         if (!authRoles.includes(verifiedToken.role)) {
             throw new AppError(403, "You are not permitted to view this route!!!")

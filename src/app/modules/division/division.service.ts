@@ -8,7 +8,6 @@ const createDivision = async (payload: IDivision) => {
         throw new Error("A division with this name already exists.");
     }
 
-
     const division = await Division.create(payload);
 
     return division
