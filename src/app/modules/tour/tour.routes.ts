@@ -41,9 +41,11 @@ router.post(
 router.patch(
     "/:id",
     checkAuth(Role.ADMIN, Role.SUPER_ADMIN),
+    multerUpload.array("files"),
     validateRequest(updateTourZodSchema),
     TourController.updateTour
 );
+
 
 router.delete("/:id", checkAuth(Role.ADMIN, Role.SUPER_ADMIN), TourController.deleteTour);
 
