@@ -9,7 +9,6 @@ import { envVars } from "../../config/env";
 import AppError from "../../errorHelpers/AppError";
 import { sendEmail } from "../../utils/sendEmail";
 
-
 // const credentialsLogin = async (payload: Partial<IUser>) => {
 //     const { email, password } = payload;
 
@@ -56,9 +55,9 @@ const getNewAccessToken = async (refreshToken: string) => {
 
 }
 const resetPassword = async (payload: Record<string, any>, decodedToken: JwtPayload) => {
-    if (payload.id != decodedToken.userId) {
-        throw new AppError(401, "You can not reset your password")
-    }
+    // if (payload.id != decodedToken.userId) {
+    //     throw new AppError(401, "You can not reset your password")
+    // }
 
     const isUserExist = await User.findById(decodedToken.userId)
     if (!isUserExist) {
