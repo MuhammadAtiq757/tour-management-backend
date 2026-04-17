@@ -24,13 +24,17 @@
     "typescript": "^5.9.3"
   },
   "dependencies": {
+    "@types/ejs": "^3.1.5",
     "@types/multer": "^2.1.0",
+    "@types/nodemailer": "^8.0.0",
+    "@types/pdfkit": "^0.17.6",
     "axios": "^1.14.0",
     "bcryptjs": "^3.0.3",
     "cloudinary": "^2.9.0",
     "cookie-parser": "^1.4.7",
     "cors": "^2.8.6",
     "dotenv": "^17.2.3",
+    "ejs": "^5.0.2",
     "express": "^5.2.1",
     "express-session": "^1.19.0",
     "http-status-code": "^2.1.0",
@@ -39,9 +43,12 @@
     "mongoose": "^9.1.5",
     "multer": "^2.1.1",
     "multer-storage-cloudinary": "^4.0.0",
+    "nodemailer": "^8.0.5",
     "passport": "^0.7.0",
     "passport-google-oauth20": "^2.0.0",
     "passport-local": "^1.0.0",
+    "pdfkit": "^0.18.0",
+    "redis": "^5.12.1",
     "tsc": "^2.0.4",
     "zod": "^4.3.6"
   }
